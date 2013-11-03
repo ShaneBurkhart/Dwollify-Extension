@@ -1,5 +1,5 @@
 $(function() {
-  var emails = $("body").text().match(/\S+@\S+\.\S+/g);
+  var emails = $("body").text().match(/([\w\-\.]+)@((\[([0-9]{1,3}\.){3}[0-9]{1,3}\])|(([\w\-]+\.)+)([a-zA-Z]{2,4}))/g);
 
   chrome.runtime.sendMessage({"emails": emails, action: "background"}, function(response){});
 });

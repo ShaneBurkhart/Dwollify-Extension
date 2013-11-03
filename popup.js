@@ -8,7 +8,7 @@ jQuery(function(){
       if(request.emails){
         console.log(request.emails);
         for(var i = 0 ; i < request.emails.length ; i ++)
-          $("#email-list").append(request.emails[i]);
+          $("#email-list").append('<br>' + request.emails[i]);
       }
     }
 
