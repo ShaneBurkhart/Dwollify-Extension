@@ -7,6 +7,7 @@ jQuery(function(){
     if(request.action == "background"){
       if(request.emails){
         console.log(request.emails);
+        var lots_of_underscores = parseInt($('#amount').val());
         $("#email-list").text('');
         for(var i = 0 ; i < request.emails.length ; i ++)
           $("#email-list").append([
@@ -24,10 +25,10 @@ jQuery(function(){
               url: "http://dwollify.herokuapp.com/dwollify",
               data: JSON.stringify({
                 "email" : email,
-                "amount" : "0.01"
+                "amount" : lots_of_underscores
               }),
               success: function(data) {
-                alert('You just tipped ' + email + '!');
+                alert('You just tipped $' + amount + ' to ' + email + '!');
               }
           });
         });
