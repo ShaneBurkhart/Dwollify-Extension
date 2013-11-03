@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Options</title>
+  <script src='libraries/jquery.js'></script>
+  <script src='libraries/alert.js'></script>
+  <script src='assets/js/options.js'></script>
+
+  <link href="assets/css/bootstrap.css" rel="stylesheet">
+  <link href="libraries/alert.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+      <h1>Contact Information</h1>
+      Name:
+      <input type="text" id="name" class="form-control"/>
+      <br>
+      Phone Number:
+      <input type="text" id="phone" class="form-control"/>
+      <br>
+      Email:
+      <input type="text" id="email" class="form-control"/>
+      <br>
+      Check Frequency
+      <br>
+      <input type="range" id="frequency" min="1" max="100">
+      <p id="frequency_preview"></p>
+      <br>
+      <button class="btn btn-primary">Save</button>
+    </div>
+</body>
+
+</html>
