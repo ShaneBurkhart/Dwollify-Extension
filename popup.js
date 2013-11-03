@@ -1,13 +1,16 @@
 jQuery(function(){
 
-  chrome.runtime.sendMessage({junk: 'hielladsf'}, function(hi){});
-
-  console.log("Adding listener");
+  chrome.runtime.sendMessage({junk: '', action: "popup"}, function(hi){});
 
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 
-    console.log(request.emails);
-    console.log("Emails");
+    if(request.action == "background"){
+      if(request.emails){
+        console.log(request.emails);
+        for(var i = 0 ; i < request.emails.length ; i ++)
+          $("#email-list").append(request.emails[i]);
+      }
+    }
 
   });
 
