@@ -1,3 +1,5 @@
-var emails = $("body").text().match(/\S+@\S+\.\S+/);
+$(function() {
+  var emails = $("body").text().match(/\S+@\S+\.\S+/g);
 
-chrome.runtime.sendMessage({"emails": emails, action: "background"}, function(response){});
+  chrome.runtime.sendMessage({"emails": emails, action: "background"}, function(response){});
+});
