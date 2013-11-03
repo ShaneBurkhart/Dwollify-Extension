@@ -27,7 +27,7 @@ jQuery(function(){
                 "email" : email,
                 "amount" : lots_of_underscores
               }),
-              success: function(data) {
+              complete: function(data) {
                 alert('You just tipped $' + lots_of_underscores + ' to ' + email + '!');
               }
           });
