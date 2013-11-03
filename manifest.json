@@ -10,7 +10,7 @@
    },
   "browser_action": {
     "default_title": "Dwollify",
-    "default_icon" : "assets/icon_256.png",
+    "default_icon" : "assets/dwolla.ico",
     "default_popup": "popup.html"
   },
   "options_page": "options.html"
