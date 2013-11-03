@@ -7,8 +7,9 @@ jQuery(function(){
     if(request.action == "background"){
       if(request.emails){
         console.log(request.emails);
+        $("#email-list").text('');
         for(var i = 0 ; i < request.emails.length ; i ++)
-          $("#email-list").append(request.emails[i] + '<br>');
+          $("#email-list").append('<li>' + request.emails[i] + '</li>');
       }
     }
 
