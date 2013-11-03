@@ -1,5 +1,7 @@
 jQuery(function(){
 
+  Pace.stop();
+
   chrome.runtime.sendMessage({junk: '', action: "popup"}, function(hi){});
 
   chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
@@ -18,6 +20,7 @@ jQuery(function(){
           ].join(""));
         $(".email").unbind();
         $(".email").bind("click", function(){
+          Pace.start();
           var lots_of_underscores = $('#amount').val();
           var email = $(this).data("email");
           $.ajax({
@@ -29,6 +32,7 @@ jQuery(function(){
               }),
               complete: function(data) {
                 alert('You just tipped $' + lots_of_underscores + ' to ' + email + '!');
+                Pace.stop();
               }
           });
         });
