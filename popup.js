@@ -25,7 +25,10 @@ jQuery(function(){
               data: JSON.stringify({
                 "email" : email,
                 "amount" : "0.01"
-              })
+              }),
+              success: function(data) {
+                alert('You just tipped ' + email + '!');
+              }
           });
         });
       }
