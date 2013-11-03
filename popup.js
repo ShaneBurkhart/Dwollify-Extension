@@ -7,7 +7,6 @@ jQuery(function(){
     if(request.action == "background"){
       if(request.emails){
         console.log(request.emails);
-        var lots_of_underscores = parseInt($('#amount').val());
         $("#email-list").text('');
         for(var i = 0 ; i < request.emails.length ; i ++)
           $("#email-list").append([
@@ -19,6 +18,7 @@ jQuery(function(){
           ].join(""));
         $(".email").unbind();
         $(".email").bind("click", function(){
+          var lots_of_underscores = $('#amount').val();
           var email = $(this).data("email");
           $.ajax({
               type: "POST",
@@ -28,7 +28,7 @@ jQuery(function(){
                 "amount" : lots_of_underscores
               }),
               success: function(data) {
-                alert('You just tipped $' + amount + ' to ' + email + '!');
+                alert('You just tipped $' + lots_of_underscores + ' to ' + email + '!');
               }
           });
         });
