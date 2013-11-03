@@ -2,23 +2,21 @@
 <html>
 
   <head>
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-primary pull-right">New Monitor</button>
-      <h3>Currently Monitoring</h3>
-        <ul>
-          <li ng-repeat="section in sections">
-            <span>{{section.name || section.url}}</span>   <button class="btn btn-danger btn-xs" ng-click="removeSection($index)">Remove</button>
-          </li>
+      <div class="span12">
+        <h3>Select an email.</h3>
+        <ul id="email-list">
         </ul>
       </div>
     </div>
-    <a href="simplify.html" target="_blank">Upgrade</a>
   </body>
+
+  <script src="libraries/jquery.js" type="text/javascript"></script>
+  <script type="text/javascript" src="popup.js"></script>
 
 </html>
